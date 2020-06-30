@@ -9,12 +9,17 @@ function generateTarget() {
   return Math.floor(Math.random() * 10)
 }
 
+// Calculates the absolute value between two numbers
+function getAbsoluteDistance(number1, number2) {
+  return Math.abs(number1 - number2)
+}
+
 // Determines which guess is closest to the target number
 function compareGuesses(humanGuess, computerGuess, targetNum) {
   // Absolute value between human guess and target
-  const humanDist = Math.abs(humanGuess - targetNum);
+  const humanDist = getAbsoluteDistance(humanGuess, targetNum);
   // Absolute value between computer guess and target
-  const computerDist = Math.abs(computerGuess - targetNum);
+  const computerDist = getAbsoluteDistance(computerGuess, targetNum);
   if (humanDist <= computerDist) { // if human guess it closer (or guesses equal)
     return true;
   } else { // if computer guess is closer
